@@ -2,19 +2,17 @@
 # Вводится M рублей и N копеек цена, а также
 # количество S товара Посчитайте общую цену в 
 # рублях и копейках за L товаров. 
-M = 3
-N = 11
-S = 5
 
-# Проверка на тот случай, если количесво 
-# копеек после умножения больше рубля
-# N = 30 
 
-M *= S
-N *= S
-if N > 99 :
-    kopecks = N % 100
-    rubles = M + (N // 100)
-    print("L = ", rubles , "рублей", kopecks , "копеек") 
-else:   
-    print(M , "рублей", N , "копеек")
+def find_price(rubles, kopecks, quantity):
+    rubles *= quantity
+    kopecks *= quantity
+    if kopecks > 99 :
+        result = str(rubles + (kopecks // 100)) + " рублей " + str(kopecks % 100) + " копеек "
+        return result 
+    else:  
+        result = str(rubles) + " рублей " + str(kopecks) + " копеек " 
+        return result
+
+
+print(find_price(3, 11, 5))
