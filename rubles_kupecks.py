@@ -3,12 +3,14 @@
 # количество quantity товара. Посчитайте общую цену в 
 # рублях и копейках. 
 
+MAX_AMOUNT_OF_KOPECKS = 99
+NUMBER_FOR_DIVISION = 100
 
 def find_price(rubles, kopecks, quantity):
     rubles *= quantity
     kopecks *= quantity
-    if kopecks > 99 :
-        result = str(rubles + (kopecks // 100)) + " рублей " + str(kopecks % 100) + " копеек "
+    if kopecks > MAX_AMOUNT_OF_KOPECKS :
+        result = str(rubles + (kopecks // NUMBER_FOR_DIVISION)) + " рублей " + str(kopecks % NUMBER_FOR_DIVISION) + " копеек "
         return result 
     else:  
         result = str(rubles) + " рублей " + str(kopecks) + " копеек " 
