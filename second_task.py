@@ -5,6 +5,7 @@
 def sum_of_digits():
     sum = 0
     number = int(input("Введите число:"))
+    number = abs(number)
     while number > 0:
         sum = sum + number % 10
         number = number // 10
