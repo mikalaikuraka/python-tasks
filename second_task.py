@@ -9,9 +9,11 @@ def sum_of_digits(number):
     if number.isnumeric():
         sum = 0
         number = abs(int(number))
+
         while number > 0:
-            sum = sum + number % NUMBER_FOR_DIVISION
-            number = number // NUMBER_FOR_DIVISION
+            sum += number % NUMBER_FOR_DIVISION
+            number //= NUMBER_FOR_DIVISION
+        
         return sum
     else:
         return "Неверный формат данных!"
