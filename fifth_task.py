@@ -54,3 +54,44 @@
 # Да, может быть и такое, что в двух странах могут 
 # находиться разные города с одинаковым названием. 
 # Реализация этого функционала - план максимум, на десяточку.
+
+dct = {}
+array = []
+arr = []
+count = 0
+
+number_of_countries = int(input("Введите количество стран:"))
+
+for i in range(number_of_countries):
+    country = input(str("Введите страну:"))
+    number_of_cities = int(input("Количество городов:"))
+
+    for j in range(number_of_cities):
+        arr.append(input(str("Введите город:")))
+        tpl = tuple(arr)
+    
+    arr.clear()
+    dct[tpl] = country
+
+number_to_search = int(input("Введите количество городов для поиска:"))
+
+for el in range(number_to_search):
+    city = input("Введите город:")
+    for i in dct:
+        for j in i:
+            if city in j:
+                count +=1
+
+    if count > 1:
+        for i in dct:
+            for j in i:
+                if city in j:
+                    array.append(dct[i])
+        print(array)
+    else:
+        for i in dct:
+            for j in i:
+                if city in j:
+                    print(dct[i])
+    
+    count = 0
