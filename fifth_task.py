@@ -63,11 +63,11 @@ count = 0
 number_of_countries = int(input("Введите количество стран:"))
 
 for i in range(number_of_countries):
-    country = input(str("Введите страну:"))
+    country = input("Введите страну:")
     number_of_cities = int(input("Количество городов:"))
 
     for j in range(number_of_cities):
-        arr.append(input(str("Введите город:")))
+        arr.append(input("Введите город:"))
         tpl = tuple(arr)
     
     arr.clear()
@@ -83,10 +83,7 @@ for el in range(number_to_search):
                 count +=1
 
     if count > 1:
-        for i in dct:
-            for j in i:
-                if city in j:
-                    array.append(dct[i])
+        array = [dct[i] for i in dct for j in i if city in j]
         print(array)
     else:
         for i in dct:
